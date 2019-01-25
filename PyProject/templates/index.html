@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title> {{ base.title }} </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default.css') }}">
+
+    </head>
+
+    <body>
+        <h1>Welcome to {{ base.title }}!</h1>
+        <div class="default-text-format">
+            <i>"Imagine what it feels like if you almost helped."</i>
+        </div>
+        <br>
+        <table width=100%>
+            <tr>
+                <td class="default-td-normal">
+                    <div class="default-text-normal-format">
+                        This website simulate a pledge/donation application.<br>
+                        Basically, you enter your information with the amount that you want to donate.<br>
+                        Please try to make the amount realistic.<br>
+                        Spend only how much are you willing to give in real world. <br><br>
+                        Please note that this is a simulator and all pledges/donation are entirely fictional.<br>
+                        No actual monetary transaction is being done.
+                    </div>
+                </td>
+                <td class="default-td-journal">
+                    <div class="default-text-jtext-format">
+                        test. heed
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+
+    </body>
+
+    </html>

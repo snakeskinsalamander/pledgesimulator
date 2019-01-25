@@ -1,0 +1,23 @@
+sudo: required
+services:
+  - docker
+
+
+before_install:
+  - docker image pull devianspade/alpine-flask
+
+script:
+  - docker container run -p 5000:5000 -d --name alflask devianspade/alpine-flask
+
+deploy:
+  provider: "elasticbeanstalk"
+  region: "us-east-2"
+  app: "alflask"
+  env: "Alflask-env"
+  bucket_name: "elasticbeanstalk-us-east-2-417856445387"
+  bucket_path: "alflask"
+  on:
+    branch: "master"
+  access_key_id: $access_key_id
+  secret_access_key:
+    secure: $access_key_secret

@@ -1,0 +1,1 @@
+A Pledge Simulator Project made with flask, nginx, redis and docker
