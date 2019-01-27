@@ -25,32 +25,37 @@
                         No actual monetary transaction is being done.<br><br>
 
                         Let's start!<br><br>
-                        <form>
+                        <form action="" method="POST">
+                            <!-- Note: CSRF_TOKEN is required for forms-->
+                            {{ form.csrf_token }}
                             <table>
                             <tr>
-                                <td align="right">Name: </td>
-                                <td><input type="text" name="name"></td>
+                                <td align="right">{{ form.name.label }}: </td>
+                                <td>{{ form.name(size=32) }}</td>
                             </tr>
                             <tr>
-                                <td align="right">Location: </td>
-                                <td><input type="text" name="location"></td>
+                                <td align="right">{{ form.loc.label }}: </td>
+                                <td>{{ form.loc(size=32) }}</td>
                             </tr>
                             <tr>
-                                <td align="right">Amount: </td>
-                                <td><input type="text" name="amount"></td>
+                                <td align="right">{{ form.amount.label }}: </td>
+                                <td>{{ form.amount(size=12) }}</td>
                             </tr>
                             <tr>
                                 <td align="right">&nbsp;</td>
-                                <td align="right"><input type="submit" value="Submit"></td>
+                                <td align="right">{{ form.submit() }}</td>
                             </tr>
                             </table>
                         </form> 
-
+                        <div class="default-text-gtext-format">
+                            {{ base.compliment }}
+                        </div>
                     </div>
                 </td>
                 <td class="default-td-journal">
                     <div class="default-text-jtext-format">
-                        OUT LATEST PLEDGERS!
+                        <b>OUT LATEST PLEDGERS!</b>
+                        <!-- Insert Pledgers here -->
                     </div>
                 </td>
             </tr>
@@ -58,5 +63,4 @@
         
 
     </body>
-
-    </html>
+</html>

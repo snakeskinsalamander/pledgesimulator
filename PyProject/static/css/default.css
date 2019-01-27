@@ -13,6 +13,11 @@ div.default-text-jtext-format {
    font-family: 'Roboto', sans-serif;
 }
 
+div.default-text-gtext-format {
+   color: #990000;
+   font-family: 'Roboto', sans-serif;
+}
+
 td.default-td-normal {
    width: 60%;
    vertical-align: top;
