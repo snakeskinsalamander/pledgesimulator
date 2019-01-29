@@ -53,10 +53,15 @@
                     </div>
                 </td>
                 <td class="default-td-journal">
-                    <div class="default-text-jtext-format">
-                        <b>OUT LATEST PLEDGERS!</b>
+                    <div class="default-text-jtext-format"><b>OUT LATEST PLEDGERS!</b><p /></div>
+                     <div class="default-text-ptext-format">
                         <!-- Insert Pledgers here -->
-                    </div>
+                        {% for item in pledger_list %}
+                        -- {{ item['time'] }} --<br>
+                        Thank you <font class="default-hlight">{{ item['name'] }}</font> of {{ item['loc'] }}
+                         for donating an amount of {{ item['loot'] }}<br><br>
+                        {% endfor %}
+                     </div>
                 </td>
             </tr>
         </table>

@@ -13,6 +13,12 @@ div.default-text-jtext-format {
    font-family: 'Roboto', sans-serif;
 }
 
+div.default-text-ptext-format {
+   font-size: small;
+   color: #DDDDDD;
+   font-family: 'Roboto', sans-serif;
+}
+
 div.default-text-gtext-format {
    color: #990000;
    font-family: 'Roboto', sans-serif;
@@ -31,3 +37,9 @@ td.default-td-journal {
    vertical-align: top;
    height: 80vh;
 }
+
+font.default-hlight {
+   color: #00FF00;
+   font-family: 'Roboto', sans-serif;
+}
+
