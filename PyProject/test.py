@@ -45,7 +45,7 @@ class pledges(Form):
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
-def hello_world():
+def pledger_world():
     form = pledges()
     base_element = {'title': 'Pledge Simulator', 'author': 'digitalsin', 'compliment': ''}
     if form.validate_on_submit():
