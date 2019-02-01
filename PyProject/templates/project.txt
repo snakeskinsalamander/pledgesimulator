@@ -1,3 +1,0 @@
-Resume Generator
-
-Clear Resume Generator that is ATS robot friendly

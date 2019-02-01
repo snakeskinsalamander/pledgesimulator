@@ -10,7 +10,7 @@ RUN apk update \
     && pip install -r requirements.txt \
     && rm -rf /var/cache/apk/*
 
-EXPOSE 5000
+EXPOSE 80
 
 ENV FLASK_APP=/apps/PySim/main.py
 WORKDIR /apps/PySim
