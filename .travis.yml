@@ -4,10 +4,12 @@ services:
 
 before_install:
   - docker swarm init
+  - docker network create my_net
 
 script:
-  - docker stack deploy -c docker-compose.yml flaskpine
-
+  - docker container run --name redised -d --network my_net --network-alias flaskpine-redis redis
+  - docker container run --name flaskpined -p 80:80 -d --network my_net devianspade/flaskpine
+  
 deploy:
   provider: "elasticbeanstalk"
   region: "us-east-2"

@@ -1,5 +1,5 @@
 FROM alpine
-LABEL OWNER="vincent <digitalsin.gmx.com>"
+MAINTAINER vincent <digitalsin.gmx.com>
 
 WORKDIR /apps
 COPY . /apps
