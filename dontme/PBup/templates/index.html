@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title> {{ base.title }} </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default.css') }}">
+
+    </head>
+
+    <body>
+        <h1>Welcome to {{ base.title }}!</h1>
+        <div class="default-text-format">
+            <i>"Imagine what it feels like if you almost helped."</i>
+        </div>
+        <br>
+        <table width=100%>
+            <tr>
+                <td class="default-td-normal">
+                    <div class="default-text-normal-format">
+                        This website simulate a pledge/donation application.<br>
+                        Basically, you enter your information with the amount that you want to donate.<br>
+                        Please try to make the amount realistic.<br>
+                        Spend only how much are you willing to give in real world. <br><br>
+                        Please note that this is a simulator and all pledges/donation are entirely fictional.<br>
+                        No actual monetary transaction is being done.<br><br>
+
+                        Let's start!<br><br>
+                        <form action="" method="POST">
+                            <!-- Note: CSRF_TOKEN is required for forms-->
+                            {{ form.csrf_token }}
+                            <table>
+                            <tr>
+                                <td align="right">{{ form.name.label }}: </td>
+                                <td>{{ form.name(size=32) }}</td>
+                            </tr>
+                            <tr>
+                                <td align="right">{{ form.loc.label }}: </td>
+                                <td>{{ form.loc(size=32) }}</td>
+                            </tr>
+                            <tr>
+                                <td align="right">{{ form.amount.label }}: </td>
+                                <td>{{ form.amount(size=12) }}</td>
+                            </tr>
+                            <tr>
+                                <td align="right">&nbsp;</td>
+                                <td align="right">{{ form.submit() }}</td>
+                            </tr>
+                            </table>
+                        </form> 
+                        <div class="default-text-gtext-format">
+                            {{ base.compliment }}
+                        </div>
+                    </div>
+                </td>
+                <td class="default-td-journal">
+                    <div class="default-text-jtext-format"><b>OUT LATEST PLEDGERS!</b><p /></div>
+                     <div class="default-text-ptext-format">
+                        <!-- Insert Pledgers here -->
+                        {% for item in pledger_list %}
+                        -- {{ item['time'] }} --<br>
+                        Thank you <font class="default-hlight">{{ item['name'] }}</font> of {{ item['loc'] }}
+                         for donating an amount of {{ item['loot'] }}<br><br>
+                        {% endfor %}
+                     </div>
+                </td>
+            </tr>
+        </table>
+        
+
+    </body>
+</html>

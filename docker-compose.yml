@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  flaskpine-redis:
+    image: redis
+    networks:
+      - fl-redis-net
+    deploy:
+      replicas: 2
+
+  flasked:
+    image: devianspade/flaskpine
+    networks:
+      - fl-redis-net
+      - front-end
+    ports:
+      - 80:5000
+    depends_on:
+      - flaskpine-redis
+    deploy:
+      replicas: 2
+
+networks:
+  front-end:
+  fl-redis-net:

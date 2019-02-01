@@ -1,0 +1,45 @@
+h1 {
+    color: #333399;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.default-text-normal-format {
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.default-text-jtext-format {
+   color: #DDDDDD;
+   font-family: 'Roboto', sans-serif;
+}
+
+div.default-text-ptext-format {
+   font-size: small;
+   color: #DDDDDD;
+   font-family: 'Roboto', sans-serif;
+}
+
+div.default-text-gtext-format {
+   color: #990000;
+   font-family: 'Roboto', sans-serif;
+}
+
+td.default-td-normal {
+   width: 60%;
+   vertical-align: top;
+   padding: 10px;
+}
+
+td.default-td-journal {
+   width: 40%;
+   background-color: rgba(50,50,50,100);
+   padding: 10px;
+   vertical-align: top;
+   height: 80vh;
+}
+
+font.default-hlight {
+   color: #00FF00;
+   font-family: 'Roboto', sans-serif;
+}
+

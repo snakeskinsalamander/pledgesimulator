@@ -12,5 +12,7 @@ RUN apk update \
 
 EXPOSE 5000
 
+ENV FLASK_APP=/apps/PySim/main.py
+WORKDIR /apps/PySim
 
-CMD ["python", "./test.py" ]
+CMD ["flask", "run", "--host=0.0.0.0" ]

@@ -2,22 +2,26 @@ sudo: required
 services:
   - docker
 
-
 before_install:
-  - docker image pull devianspade/alpine-flask
+  - docker swarm ios_interface
 
 script:
-  - docker container run -p 5000:5000 -d --name alflask devianspade/alpine-flask
+  - docker stack deploy -c docker-compose.yml flaskpine
 
 deploy:
   provider: "elasticbeanstalk"
   region: "us-east-2"
-  app: "alflask"
-  env: "Alflask-env"
+  app: "flaskpine"
+  env: "Flaskpine-env"
   bucket_name: "elasticbeanstalk-us-east-2-417856445387"
-  bucket_path: "alflask"
+  bucket_path: "flaskpine"
+
   on:
     branch: "master"
-  access_key_id: $access_key_id
+  access_key_id: "$NOT_MY_ID"
   secret_access_key:
-    secure: $access_key_secret
+    secure: "$NOT_MY_KEY"
+
+
+
+# elasticbeanstalk-us-east-2-417856445387
