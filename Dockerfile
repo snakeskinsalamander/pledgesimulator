@@ -15,4 +15,4 @@ EXPOSE 80
 ENV FLASK_APP=/apps/PySim/main.py
 WORKDIR /apps/PySim
 
-CMD ["flask", "run", "--host=0.0.0.0" ]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=80" ]
